@@ -29,10 +29,10 @@ p {
   font-family: "Arial Black";
   text-transform: uppercase;
   align-self: center;
-  font-size: 3.5rem;
+  font-size: 3rem;
   grid-column: 1 / -1;
   grid-row: 3;
-  line-height: 3.7rem;
+  line-height: 3rem;
 }
 
 .image {
@@ -118,13 +118,13 @@ img {
   grid-row: 12;
 }
 
-@media (min-width: 420px) {
+@media screen and (min-width: 420px) {
   .schedule {
     grid-column: 8 / 10;
   }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .title {
     font-size: 3.7rem;
     line-height: 4.5rem;
