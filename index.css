@@ -45,8 +45,9 @@ img {
   height: auto;
 }
 
-.orange-line svg {
+.orange-line {
   display: block;
+  border-left: 10px solid #ffc000;
 }
 
 .line1 {
