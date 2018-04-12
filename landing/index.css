@@ -39,18 +39,22 @@ ul {
   list-style-type: none;
 }
 
+li {
+  font-size: 0.9rem;
+}
+
 p {
   width: auto;
   margin: 0 auto;
-  padding: 0.5rem;
+  padding: 0;
   font-size: 1rem;
   font-family: "IBM Plex Mono";
 }
 
 section {
   margin: 0 auto;
-  width: 85vw;
-  max-width: 85vw;
+  width: 90vw;
+  max-width: 90vw;
   min-height: 100vh;
   height: 100vh;
 }
@@ -59,7 +63,6 @@ section {
   display: grid;
   justify-content: center;
   align-content: center;
-
 }
 
 .animation {
@@ -73,7 +76,6 @@ section {
   grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
 }
-
 
 .intro-heading {
   grid-column: 1 / span 5;
@@ -94,12 +96,19 @@ section {
   max-height: unset;
   width: unset;
   display: grid;
-  grid-template-rows: 1rem auto auto auto auto 2rem;
-  grid-template-columns: auto auto auto 15rem auto;
+  grid-template-rows: 1rem 2rem auto 2rem auto 2rem;
+  grid-template-columns: 13rem auto auto;
   grid-auto-flow: column;
-  grid-column-gap: 0.5rem;
+  grid-gap: 0.5rem;
   grid-row-gap: 1rem
   background-color: var(--bg);
+}
+
+#about h2 {
+  font-size: 1.5rem;
+  box-shadow: inset 0rem -0.8rem var(--main-color);
+  display: inline-block;
+  padding-right: 1rem;
 }
 
 .dev-heading {
@@ -108,34 +117,33 @@ section {
   align-self: start;
 }
 
-.dev-headline {
-  display: inline-block;
-  font-size: 1.5rem;
-  padding-right: 1rem;
-  box-shadow: inset 0rem -0.5rem var(--main-color);
+.contact-icons i {
+  padding-top: 0.2rem;
+}
+
+.contact-icons a,
+.contact-icons a:hover,
+.contact-icons a:active {
+  text-decoration: none;
+  color: black;
 }
 
 .speaker-heading {
-  grid-column: 4;
-  grid-row: -3;
+  grid-column: 1;
+  grid-row: 4;
   align-self: end;
 }
 
-.speaker-headline {
-  display: inline-block;
-  font-size: 1.5rem;
-  padding-right: 1rem;
-  box-shadow: inset 0rem -0.5rem var(--main-color);
-}
-
 .dev-stuff {
+  font-size: 0.9rem;
+  min-height: 26rem;
   padding: 0 1rem 0 0;
   justify-self: center;
   align-self: start;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  grid-row: 2 / -2;
   grid-column: 2;
+  grid-row: 2 / span 2;
 }
 
 .speaker-stuff-1 {
@@ -156,53 +164,52 @@ section {
 
 .black-line {
   grid-column: 3;
-  grid-row: 2 / -2;
+  grid-row: 2 / span 2;
   border-left: 1rem solid black;
   opacity: 0.8;
 }
 
 .workplace {
+  grid-column: 1;
+  grid-row: 3 / 4;
   margin: 0;
   padding: 0;
   justify-self: end;
   text-align: right;
   align-self: end;
-  font-size: 1rem;
   font-family: "IBM Plex Mono";
 }
 
-.workplace.-current {
+.-current {
   text-decoration: none;
 }
 
-.workplace.-former {
+.-former {
   text-decoration: line-through;
-}
-
-.work1 {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.work2 {
-  grid-column: 1;
-  grid-row: 4;
-}
-
-.work3 {
-  grid-column: 1;
-  grid-row: 5;
 }
 
 .where-speak {
   padding: 0;
   margin: 0;
   font-family: "IBM Plex Mono";
-  grid-column: 4;
-  grid-row: 3;
+  grid-column: 1;
+  grid-row: 9 / span 2;
+  justify-self: start;
+  align-self: end;
 }
 
-.links {
+.where-speak a {
+  text-decoration: none;
+  color: black;
+}
+
+.where-speak a:hover,
+.where-speak a:active {
+  color: var(--highlight);
+  font-weight: 600;
+}
+
+.about-me-link {
   font-family: "Megrim", cursive;
   display: block;
   text-align: right;
@@ -217,24 +224,26 @@ section {
   margin: 0;
 }
 
-a {
+.about-me-link a {
   text-decoration: none;
   color: black;
-  box-shadow: inset 0rem -0.3rem var(--main-color);
+  box-shadow: inset 0rem -0.5rem var(--main-color);
 }
 
-a:hover,
-a:active {
-  box-shadow: inset 0rem -0.3rem var(--highlight);
+.about-me-link a:hover,
+.about-me-link a:active {
+  box-shadow: inset 0rem -0.5rem var(--highlight);
 }
 
 .triangle {
   background-color: var(--main-color);
   clip-path: polygon(0 0, 0 100%, 100% 100%);
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%);
 }
 
 .-inverted {
   clip-path: polygon(0 0, 100% 0, 100% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 
 .-pink {
@@ -348,6 +357,7 @@ a:active {
 
 @media screen and (min-width: 23rem) {
   section {
+    width: 95vw;
     max-width: 95vw;
   }
 
@@ -356,11 +366,7 @@ a:active {
     grid-column: 1 / span 5;
   }
 
-  #about h2 {
-    font-size: 2.1rem;
-  }
-
-  .links {
+  .about-me-link {
     font-size: 1.4rem;
   }
 
@@ -380,13 +386,63 @@ a:active {
 }
 
 @media screen and (min-width: 28rem) {
-  .what-speak {
-    grid-column: 2;
+}
+
+@media screen and (min-width: 35rem) {
+  #about h2 {
+    font-size: 2.1rem;
+  }
+
+  #about {
+    grid-template-rows: 1rem auto auto auto auto 1rem;
+    grid-template-columns: 14rem auto auto 11rem auto;
+  }
+
+  .black-line{
+    grid-column: 3;
+    grid-row: 2 / span 4;
+  }
+
+  .dev-stuff {
+    grid-row: 2 / -2;
+  }
+
+  .speaker-heading {
+    grid-column: 4;
+    grid-row: -3;
+    align-self: end;
+  }
+
+  .speaker-stuff-1 {
+    padding: 0;
     grid-row: 2;
+    grid-column: 4;
+    justify-self: end;
+  }
+
+  .speaker-stuff-2 {
+    grid-row: 2 / -1;
+    grid-column: 5;
   }
 
   .where-speak {
     grid-column: 4;
-    grid-row: 3;
+    grid-row: 3 / span 2;
+  }
+
+  .workspace {
+    grid-column: 1;
+    grid-row: 3 / span 3;
+  }
+
+  li {
+    font-size: 1rem;
+  }
+
+  .dev-stuff {
+    font-size: 1rem;
+    padding: 0 1rem 0 0;
+    grid-column: 2;
+    grid-row: 2 / span 2;
   }
 }
