@@ -97,7 +97,7 @@ section {
   max-height: unset;
   width: unset;
   display: grid;
-  grid-template-rows: 1rem 2rem auto auto 2rem 1rem;
+  grid-template-rows: 0.5rem 2rem auto auto 2rem 0.5rem;
   grid-template-columns: 1rem auto 12.3rem auto 1rem;
   grid-auto-flow: column;
   grid-column-gap: 0.3rem;
@@ -122,9 +122,18 @@ section {
   padding-top: 0.2rem;
 }
 
-.contact-icons a,
-.contact-icons a:hover,
-.contact-icons a:active {
+.contact-icons a i {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-icons a:hover > i,
+.contact-icons a:active > i {
+  text-shadow: 4px 0px var(--highlight), -4px 0px var(--main-color);
+}
+
+.contact-icons a {
+  cursor: url("/img/nyan_cat.cur") 9 9, pointer;
   text-decoration: none;
   color: black;
 }
@@ -236,6 +245,7 @@ section {
 }
 
 .about-me-link a {
+  padding-right: 0.5rem;
   text-decoration: none;
   color: black;
   box-shadow: inset 0rem -0.5rem var(--main-color);
@@ -368,6 +378,7 @@ section {
 
 @media screen and (min-width: 23rem) {
   section {
+    height: 100%;
     width: 95vw;
     max-width: 95vw;
   }
@@ -386,17 +397,10 @@ section {
     height: auto;
   }
 
-  .tri10 {
-    background-color: var(--main-color);
-  }
-
   #speaker {
     grid-template-columns: auto 1fr 1fr;
     grid-template-rows: auto 1fr 1fr;
   }
-}
-
-@media screen and (min-width: 28rem) {
 }
 
 @media screen and (min-width: 35rem) {
@@ -475,5 +479,9 @@ section {
 
   .speaker-stuff-mobile {
     display: none;
+  }
+
+  .tri10 {
+    background-color: var(--main-color);
   }
 }
